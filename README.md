@@ -192,8 +192,8 @@ The analytics layer of the platform is visualized using **Power BI dashboards**.
 ## Setup
 
 Clone the repository:
-git clone https://github.com/anandh-analytics/job-market-intelligence.git
-cd job-market-intelligence
+git clone https://github.com/devverse06/Job-market-intelligence.git
+cd Job-market-intelligence
 
 Install dependencies:
 pip install -r requirements.txt
