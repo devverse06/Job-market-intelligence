@@ -1,0 +1,33 @@
+{
+  "source": "adzuna",
+  "entity": "job_posting",
+  "version": "silver_v1",
+
+  "required_fields": [
+    "source",
+    "job_id",
+    "title",
+    "description",
+    "company",
+    "location",
+    "category",
+    "posted_at",
+    "apply_url",
+    "ingested_at"
+  ],
+
+  "optional_fields": [
+    "salary_min",
+    "salary_max",
+    "latitude",
+    "longitude"
+  ],
+
+  "data_quality_rules": {
+    "title_not_null": true,
+    "description_min_length": 50,
+    "company_not_null": true,
+    "location_not_null": true,
+    "posted_at_iso_format": true
+  }
+}

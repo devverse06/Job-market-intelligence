@@ -1,0 +1,43 @@
+{
+  "source": "greenhouse",
+  "version": "1.0",
+  "primary_key": ["source", "company_slug", "job_id"],
+  "required_fields": [
+    "company_slug",
+    "job_id",
+    "title",
+    "location_raw",
+    "posted_at",
+    "url"
+  ],
+  "optional_fields": [
+    "department",
+    "team",
+    "employment_type",
+    "description",
+    "apply_url",
+    "updated_at"
+  ],
+  "silver_mapping": {
+    "company_slug": "greenhouse.company_slug",
+    "job_id": "greenhouse.id",
+    "title": "greenhouse.title",
+    "location_raw": "greenhouse.location.name",
+    "posted_at": "greenhouse.updated_at",
+    "url": "greenhouse.absolute_url",
+    "department": "greenhouse.departments[0].name",
+    "team": "greenhouse.teams[0].name",
+    "employment_type": "greenhouse.metadata.employment_type",
+    "description": "greenhouse.content",
+    "apply_url": "greenhouse.absolute_url",
+    "updated_at": "greenhouse.updated_at"
+  },
+"validation_rules": {
+  "job_id": { "type": "string", "nullable": false },
+  "company_slug": { "type": "string", "nullable": false },
+  "title": { "type": "string", "nullable": false },
+  "posted_at": { "type": "timestamp", "nullable": false },
+  "url": { "type": "string", "nullable": false },
+  "location_raw": { "type": "string", "nullable": true }
+}
+}

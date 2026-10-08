@@ -1,0 +1,34 @@
+{
+  "source": "adzuna_api",
+  "entity": "job_posting",
+  "version": "v1",
+  "required_fields": [
+    "id",
+    "title",
+    "description",
+    "created",
+    "redirect_url",
+    "location",
+    "company",
+    "category"
+  ],
+  "optional_fields": [
+    "salary_min",
+    "salary_max",
+    "salary_is_predicted",
+    "longitude",
+    "latitude",
+    "adref",
+    "__CLASS__"
+  ],
+  "nested_fields": {
+    "location": ["display_name", "area"],
+    "company": ["display_name"],
+    "category": ["label"]
+  },
+  "data_quality_rules": {
+    "title_not_null": true,
+    "description_min_length": 50,
+    "created_iso_format": true
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "entity": "job_posting",
+  "layer": "gold",
+  "version": "v1",
+  "primary_key": "job_id",
+  "required_fields": [
+    "job_id",
+    "source",
+    "company",
+    "title",
+    "description",
+    "location",
+    "category",
+    "posted_date",
+    "ingested_at"
+  ],
+  "optional_fields": [
+    "salary_min",
+    "salary_max",
+    "apply_url",
+    "latitude",
+    "longitude"
+  ],
+  "deduplication_rules": {
+    "key": ["job_id", "source"],
+    "order_by": "ingested_at_desc"
+  },
+  "data_quality_rules": {
+    "title_not_null": true,
+    "description_min_length": 100,
+    "posted_date_iso": true
+  }
+}
